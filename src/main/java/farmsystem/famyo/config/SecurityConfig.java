@@ -24,9 +24,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/member/jwtInfo").authenticated()
+                        .requestMatchers("/login", "/signup", "/g-recaptcha").permitAll()
+                        .requestMatchers("/jwtInfo").authenticated()
                         .anyRequest().permitAll()
                 )
+
                 .addFilterBefore(new JwtTokenFilter(memberService), UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity.build();

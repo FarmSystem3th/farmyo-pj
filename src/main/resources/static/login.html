@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Google reCAPTCHA JS -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <!-- Login JS -->
+    <script src="/js/login.js"></script>
+    <style>
+        /* 버튼 스타일 */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" id="loginId" name="memberId" placeholder="a@b.c" style="width:250px; height:30px;">
+</div>
+<div>
+    <input type="password" id="loginPw" name="memberPw" placeholder="비밀번호" style="width:250px; height:30px;">
+</div>
+
+<!-- reCAPTCHA 등록 -->
+<div id="g-recaptcha"></div>
+<br>
+
+<div>
+    <input type="button" class="disabled-btn" id="loginBtn" value="로그인" disabled>
+</div>
+</body>
+</html>

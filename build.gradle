@@ -46,6 +46,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	//	리캡차
+	implementation 'net.tanesha.recaptcha4j:recaptcha4j:0.0.7'
+
+	//	리캡차 사용을 위한 json
+	implementation 'javax.json:javax.json-api:1.1.2'
+	implementation 'org.glassfish:javax.json:1.1'
 }
 
 tasks.named('test') {
